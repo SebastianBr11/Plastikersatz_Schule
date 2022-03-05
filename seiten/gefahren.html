@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Plastikersatz - Gefahren</title>
+    <link rel="stylesheet" type="text/css" href="../form.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="../bilder/waste-plastic.svg"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/2970a66d13.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      main.gefahren {
+        height: auto;
+        padding-bottom: 2rem;
+      }
+
+      section.gefahren {
+        color: var(--textGray2);
+        text-align: center;
+        padding: 2rem 2rem;
+      }
+
+      @media screen and (min-width: 1600px) {
+        section.gefahren {
+          padding: 82.104px;
+        }
+      }
+
+      .list-container {
+        z-index: 10;
+        margin-top: 2rem;
+      }
+
+      .list-container ul {
+        margin: 1rem 0;
+        list-style: none;
+      }
+
+      .list-container li {
+        margin-bottom: 2rem;
+      }
+
+      .list-container .news-card {
+        padding: 0;
+        display: flex;
+      }
+
+      .list-container .news-card::before {
+        height: 100%;
+        width: 4px;
+        transform: scale(1, 1);
+      }
+
+      .list-container .card-text {
+        padding: 2.5rem;
+        padding-left: 3rem;
+      }
+
+      .list-container .card-title {
+        color: var(--paragGray2);
+        line-height: 1.2;
+        text-align: left;
+        font-weight: 400;
+      }
+
+      .list-container .card-pic-container {
+        position: relative;
+        padding-bottom: 10%;
+        width: 100%;
+      }
+
+      .list-container .card-pic {
+        object-fit: cover;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        bottom: 0;
+        right: 0;
+        left: 0;
+      }
+
+      @media screen and (max-width: 768px) {
+        .list-container .news-card {
+          flex-direction: column;
+        }
+
+        .list-container .card-pic-container {
+          padding-bottom: 50%;
+        }
+
+        .list-container .news-card::before {
+          height: 4px;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header m-width">
+        <div class="logo-container">
+          <a class="logo-link" href="../index.html">
+            <img
+              class="logo"
+              title="Meeresverschmutzung durch Plastik"
+              src="../bilder/waste-plastic.svg"
+              alt="logo"
+            />
+            <h1 class="logo-text">Plastikersatz</h1>
+          </a>
+        </div>
+        <nav class="top-nav">
+          <ul class="nav-links">
+            <li>
+              <a class="nav-link nav-link-active" href="">Gefahren</a>
+            </li>
+            <li>
+              <a class="nav-link" href="alternativen.html">Alternativen</a>
+            </li>
+            <li><a class="nav-link" href="infos.html">Infos</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="gefahren">
+      <div id="stripes" aria-hidden="true">
+        <span aria-hidden="true"></span>
+      </div>
+
+      <div class="main-hero m-width">
+        <div class="title title-gefahren">
+          <h1 class="title-h">
+            Gründe wieso Plastik schlecht für die Umwelt ist
+          </h1>
+          <p class="title-p">Gefahren</p>
+        </div>
+      </div>
+    </main>
+
+    <section class="gefahren m-width">
+      <div class="list-container">
+        <ul>
+          <li>
+            <div class="news-card">
+              <div class="card-text">
+                <p class="card-title">
+                  Plastik löst sich nicht auf da es ein ewigbleibendes Material
+                  ist und Jahrtausende zum Abbau benötigt Stück ist bleibt es
+                  irgendwo auf unserem Planeten erhalten.
+                </p>
+              </div>
+              <div class="card-pic-container">
+                <img
+                  class="card-pic"
+                  src="../bilder/komprimiert/unsplash2-min.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="news-card">
+              <div class="card-text">
+                <p class="card-title">
+                  Der Rohstoff Plastik ist begrenzt da er aus Erdöl bzw. Rohöl
+                  besteht und diese limitiert sind
+                </p>
+              </div>
+              <div class="card-pic-container">
+                <img
+                  class="card-pic"
+                  src="../bilder/komprimiert/unsplash1-min.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="news-card">
+              <div class="card-text">
+                <p class="card-title">
+                  Plastik ist ein giftiges Material welches Weichmacher enthält,
+                  diese können die Entwicklung von Kindern stören. Des Weiteren
+                  gelangt es in unsere Nahrungskette da Fische Mikroplastik
+                  essen und das Plastik dadurch auf unseren Tisch kommt.
+                </p>
+              </div>
+              <div class="card-pic-container">
+                <img
+                  class="card-pic"
+                  src="../bilder/Plastik/plastik1.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="news-card">
+              <div class="card-text">
+                <p class="card-title">
+                  Plastik zerstört die Natur da es in die Meere gelangt und dort
+                  von Meeressäugern und Seevögeln gegessen wird. Diese können
+                  daran Sterben und Krankheiten übertragen
+                </p>
+              </div>
+              <div class="card-pic-container">
+                <img
+                  class="card-pic"
+                  src="../bilder/Plastik/plastik3.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="footer-mobile-nav">
+      <nav class="bottom-nav">
+        <ul class="nav-links">
+          <li><a class="nav-link nav-link-active" href="">Gefahren</a></li>
+          <li>
+            <a class="nav-link" href="alternativen.html">Alternativen</a>
+          </li>
+          <li><a class="nav-link" href="infos.html">Infos</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>
