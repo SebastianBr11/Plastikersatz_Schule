@@ -1,0 +1,32 @@
+---
+interface Props {
+	active?: string
+}
+
+const { active } = Astro.props
+---
+
+<footer class='footer-mobile-nav'>
+	<nav class='bottom-nav'>
+		<ul class='nav-links'>
+			<li>
+				<a
+					class={'nav-link ' + (active === 'gefahren' ? 'nav-link-active' : '')}
+					href='gefahren.html'>Gefahren</a
+				>
+			</li>
+			<li>
+				<a
+					class={'nav-link ' +
+						(active === 'alternativen' ? 'nav-link-active' : '')}
+					href=''>Alternativen</a
+				>
+			</li>
+			<li>
+				<a
+					class={'nav-link ' + (active === 'infos' ? 'nav-link-active' : '')}
+					href='infos.html'>Infos</a>
+			</li>
+		</ul>
+	</nav>
+</footer>

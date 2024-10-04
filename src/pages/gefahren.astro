@@ -1,0 +1,180 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+import img2 from '../bilder/komprimiert/unsplash1-min.jpg'
+import img1 from '../bilder/komprimiert/unsplash2-min.jpg'
+import img3 from '../bilder/Plastik/plastik1.jpg'
+import img4 from '../bilder/Plastik/plastik3.jpg'
+---
+
+<Layout
+	title='Plastikersatz - Gefahren'
+	description='Übersicht zu Gefahren für Plastik'
+	pageIdentifier='gefahren'
+>
+	<style>
+		main.gefahren {
+			height: auto;
+			padding-bottom: 2rem;
+		}
+
+		section.gefahren {
+			color: var(--textGray2);
+			text-align: center;
+			padding: 2rem 2rem;
+		}
+
+		@media screen and (min-width: 1600px) {
+			section.gefahren {
+				padding: 82.104px;
+			}
+		}
+
+		.list-container {
+			z-index: 10;
+			margin-top: 2rem;
+		}
+
+		.list-container ul {
+			margin: 1rem 0;
+			list-style: none;
+		}
+
+		.list-container li {
+			margin-bottom: 2rem;
+		}
+
+		.list-container .news-card {
+			padding: 0;
+			display: flex;
+		}
+
+		.list-container .news-card::before {
+			height: 100%;
+			width: 4px;
+			transform: scale(1, 1);
+		}
+
+		.list-container .card-text {
+			padding: 2.5rem;
+			padding-left: 3rem;
+		}
+
+		.list-container .card-title {
+			color: var(--paragGray2);
+			line-height: 1.2;
+			text-align: left;
+			font-weight: 400;
+		}
+
+		.list-container .card-pic-container {
+			position: relative;
+			padding-bottom: 10%;
+			width: 100%;
+		}
+
+		.list-container .card-pic {
+			object-fit: cover;
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			bottom: 0;
+			right: 0;
+			left: 0;
+		}
+
+		@media screen and (max-width: 768px) {
+			.list-container .news-card {
+				flex-direction: column;
+			}
+
+			.list-container .card-pic-container {
+				padding-bottom: 50%;
+			}
+
+			.list-container .news-card::before {
+				height: 4px;
+				width: 100%;
+			}
+		}
+	</style>
+
+	<main class='gefahren'>
+		<div id='stripes' aria-hidden='true'>
+			<span aria-hidden='true'></span>
+		</div>
+
+		<div class='main-hero m-width'>
+			<div class='title title-gefahren'>
+				<h1 class='title-h'>
+					Gründe wieso Plastik schlecht für die Umwelt ist
+				</h1>
+				<p class='title-p'>Gefahren</p>
+			</div>
+		</div>
+	</main>
+
+	<section class='gefahren m-width'>
+		<div class='list-container'>
+			<ul>
+				<li>
+					<div class='news-card'>
+						<div class='card-text'>
+							<p class='card-title'>
+								Plastik löst sich nicht auf da es ein ewigbleibendes Material
+								ist und Jahrtausende zum Abbau benötigt Stück ist bleibt es
+								irgendwo auf unserem Planeten erhalten.
+							</p>
+						</div>
+						<div class='card-pic-container'>
+							<img class='card-pic' src={img1.src} alt='' />
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class='news-card'>
+						<div class='card-text'>
+							<p class='card-title'>
+								Der Rohstoff Plastik ist begrenzt da er aus Erdöl bzw. Rohöl
+								besteht und diese limitiert sind
+							</p>
+						</div>
+						<div class='card-pic-container'>
+							<img class='card-pic' src={img2.src} alt='' />
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class='news-card'>
+						<div class='card-text'>
+							<p class='card-title'>
+								Plastik ist ein giftiges Material welches Weichmacher enthält,
+								diese können die Entwicklung von Kindern stören. Des Weiteren
+								gelangt es in unsere Nahrungskette da Fische Mikroplastik essen
+								und das Plastik dadurch auf unseren Tisch kommt.
+							</p>
+						</div>
+						<div class='card-pic-container'>
+							<img class='card-pic' src={img3.src} />
+							alt='' />
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class='news-card'>
+						<div class='card-text'>
+							<p class='card-title'>
+								Plastik zerstört die Natur da es in die Meere gelangt und dort
+								von Meeressäugern und Seevögeln gegessen wird. Diese können
+								daran Sterben und Krankheiten übertragen
+							</p>
+						</div>
+						<div class='card-pic-container'>
+							<img class='card-pic' src={img4.src} alt='' />
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</section>
+</Layout>

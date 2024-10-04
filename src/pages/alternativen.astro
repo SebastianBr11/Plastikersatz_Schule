@@ -1,0 +1,157 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+import { Image } from 'astro:assets'
+import bagasseImage from '../bilder/komprimiert/Bagasse.jpg'
+import cutleryImage from '../bilder/komprimiert/Einwegbesteck.jpg'
+import hanfImage from '../bilder/komprimiert/Hanf.jpg'
+---
+
+<Layout
+	title='Plastikersatz - Alternativen'
+	description='Übersicht zu Alternativen für Plastik'
+	pageIdentifier='alternativen'
+>
+	<style>
+		main.alternativen {
+			height: auto;
+			padding-bottom: 2rem;
+		}
+
+		section.alternativen {
+			color: var(--textGray2);
+			text-align: center;
+			padding: 2rem 2rem;
+		}
+		@media screen and (min-width: 1600px) {
+			section.alternativen {
+				padding: 82.104px;
+			}
+		}
+
+		.hanf {
+			text-align: left;
+			padding: 2rem 1.7rem;
+			background-color: var(--mainColourDark5);
+		}
+		.hanf p {
+			line-height: 1.4;
+			font-weight: 300;
+		}
+		.alternative {
+			margin-top: 2rem;
+			text-align: left;
+			padding: 2rem 1.7rem;
+			background-color: var(--mainColourDark5);
+		}
+		.alternative p {
+			line-height: 1.4;
+			font-weight: 300;
+		}
+		.list {
+			margin-top: 5px;
+		}
+		.pic1 {
+			float: right;
+			width: 300px;
+			height: 200px;
+		}
+		.pic2 {
+			float: right;
+			width: 190px;
+			height: 130px;
+		}
+		.pic3 {
+			float: right;
+			width: 300px;
+			height: 200px;
+		}
+	</style>
+	<main class='alternativen'>
+		<div id='stripes' aria-hidden='true'>
+			<span></span>
+		</div>
+
+		<div class='main-hero m-width'>
+			<div class='title'>
+				<h1 class='title-h'>Gemeinsam bekämpfen wir Plastik</h1>
+				<p class='title-p'>Alternativen</p>
+			</div>
+		</div>
+	</main>
+
+	<section class='alternativen m-width'>
+		<div class='text'>
+			<div class='hanf'>
+				<Image class='pic1' src={hanfImage} alt='Hanf' />
+				<h2><u>Hanf:</u></h2>
+				<ul>
+					<li class='list'>
+						Hanf hat Gesundheitliche Vorteile da es eine ökologisch nachhaltige
+						Alternative ist
+					</li>
+					<li class='list'>
+						Es kann als Rohstoff für Lebensmittel, Textilien und Medikamente
+						usw. verwendet werden
+					</li>
+					<li class='list'>
+						Hanf wächst schneller als die meisten Baumarten und benötigt weniger
+						Pestizide als Baumwolle oder Flachs
+					</li>
+					<li class='list'>
+						Die Fasern von Hanf werden seit langen für die Herstellung von
+						Surfbrettern verwendet
+					</li>
+					<li class='list'>
+						BMW, Mercedes und Bugatti setzen bereits Hanfkunststoffe bei ihren
+						Autos für spezielle Bereiche im Innenraum zur Isolierung der
+						Türverkleidung ein.
+					</li>
+					<li class='list'>
+						Im 718 Cayman GT4 ist der Heckflügel aus Hanffaserplatten gebaut.
+					</li>
+				</ul>
+			</div>
+
+			<div class='alternative'>
+				<Image class='pic2' src={cutleryImage} alt='Einwegbesteck' />
+				<h2><u>PLA-Polylactid:</u></h2>
+				<ul>
+					<li class='list'>
+						Wird auch Polymilchsäure genannt und besteht aus Maisstärke und
+						Milchsäuren
+					</li>
+					<li class='list'>
+						Es ist Biologisch abbaubar und kann für die Herstellung von
+						Plastiktüten, Trinkbechern, Einweg- Besteck und Strohalmen, Folien
+						benutzt werden
+					</li>
+				</ul>
+			</div>
+
+			<div class='alternative'>
+				<Image class='pic3' src={bagasseImage} alt='Bagasse' />
+				<h2><u>Bagasse:</u></h2>
+				<ul>
+					<li class='list'>
+						Bagasse wird aus einem Nebenprodukt der Zuckerproduktion gewonnen.
+					</li>
+					<li class='list'>
+						Nach Auspressen des Saftes aus dem Zuckerrohr bleiben faserige Reste
+						zurück, welche sich optimal zur Weiterverarbeitung von
+						Einweggeschirr und Verpackungen eignen.
+					</li>
+					<li class='list'>
+						Bagasse ist ein rein biobasiertes Material, vollständig
+						kompostierbar, wasserundurchlässig, fettresistent und enorm
+						hitzebeständig
+					</li>
+					<li class='list'>
+						Bagasse-Produkte eignen sich durchaus auch zum Aufwärmen in
+						Mikrowelle und Ofen.
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+</Layout>

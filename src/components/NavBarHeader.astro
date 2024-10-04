@@ -1,0 +1,46 @@
+---
+import { Image } from 'astro:assets'
+
+interface Props {
+	active?: string
+}
+
+const { active } = Astro.props
+---
+
+<header>
+	<div class='header m-width'>
+		<div class='logo-container'>
+			<a class='logo-link' href='/'>
+				<Image src='/waste-plastic.svg' alt='logo' width={35} height={35} />
+				<div class='logo-text-container'>
+					<h1 class='logo-text'>Plastikersatz</h1>
+				</div>
+			</a>
+		</div>
+		<nav class='top-nav'>
+			<ul class='nav-links'>
+				<li>
+					<a
+						class={'nav-link ' +
+							(active === 'gefahren' ? 'nav-link-active' : '')}
+						href='/gefahren'>Gefahren</a
+					>
+				</li>
+				<li>
+					<a
+						class={'nav-link ' +
+							(active === 'alternativen' ? 'nav-link-active' : '')}
+						href='/alternativen'>Alternativen</a
+					>
+				</li>
+				<li>
+					<a
+						class={'nav-link ' + (active === 'infos' ? 'nav-link-active' : '')}
+						href='/infos'>Infos</a
+					>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>

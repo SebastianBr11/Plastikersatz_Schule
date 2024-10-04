@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+import img2 from '../bilder/komprimiert/muellwirbel.jpg'
+import plasticCreationImage from '../bilder/komprimiert/plastikherstellung.jpg'
+---
+
+<Layout
+	title='Plastikersatz - Infos'
+	description='Übersicht zu Infos für Plastik'
+	pageIdentifier='infos'
+>
+	<style>
+		.infoheadline {
+			color: var(--textGray3);
+			font-size: 2rem;
+			z-index: 10;
+			text-align: left;
+			margin-bottom: 10px;
+			font-weight: 600;
+			text-decoration: underline var(--textGray3);
+		}
+		.pic1 {
+			width: 100%;
+			margin-top: 2rem;
+			margin-bottom: 2rem;
+		}
+
+		.pic2 {
+			width: 50%;
+			margin-top: 2rem;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			width: 50%;
+		}
+		.infolist {
+			margin-top: 10px;
+			color: var(--textGray3);
+			font-size: larger;
+			font-weight: 100;
+		}
+		.infotext {
+			color: var(--textGray3);
+			font-size: larger;
+			z-index: 10;
+			text-align: left;
+			font-weight: 100;
+		}
+		main.info {
+			height: auto;
+			padding-bottom: 2rem;
+		}
+		section.info {
+			color: var(--textGray2);
+			padding: 2rem 2rem;
+		}
+		@media screen and (min-width: 1600px) {
+			section.info {
+				padding: 82.104px;
+			}
+		}
+	</style>
+
+	<main class='info'>
+		<div id='stripes' aria-hidden='true'>
+			<span></span>
+		</div>
+
+		<div class='main-hero m-width'>
+			<div class='title'>
+				<h1 class='title-h'>Gemeinsam bekämpfen wir Plastik</h1>
+				<p class='title-p'>Infos</p>
+			</div>
+		</div>
+	</main>
+
+	<section class='info m-width'>
+		<div class='text'>
+			<h2 class='infoheadline'>Was ist Plastik überhaupt?</h2>
+
+			<p class='infotext'>
+				Plastik nennt man heutzutage alle möglichen Kunststoffe. Es besteht aus
+				Erdöl welches mit Rohbenzin destilliert wird und darauf hin mit dem
+				Cracking-Verfahren aufgespaltet und durch Synthese Kunstoff hergestellt
+				wird
+			</p>
+			<img
+				class='pic1'
+				src={plasticCreationImage.src}
+				alt='Plastikherstellung'
+			/>
+			<ul>
+				<li class='infolist'>
+					1950 wurden noch 1,5 Tonnen pro Jahr produziert, heute sind es 400
+					Millionen Tonnen
+				</li>
+				<li class='infolist'>
+					Jährlich verenden etwa 1.000.000 Seevögel und 135.000 Meeressäuger
+					durch den Kontakt Plastikmüll
+				</li>
+				<li class='infolist'>
+					Eine Tube Zahnpasta kann bis zu 10% Mikroplastik enthalten
+				</li>
+				<li class='infolist'>
+					Es gibt richtige Müllwirbel im Meer welche aus Plastik bestehen. Der
+					größte darunter ist der Great Pacific Garbage Patch
+				</li>
+			</ul>
+			<img class='pic2' src={img2.src} alt='Muellwirbel' />
+		</div>
+	</section>
+</Layout>
