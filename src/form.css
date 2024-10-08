@@ -360,6 +360,12 @@ main.gefahren {
 	flex-direction: column;
 	-webkit-box-align: center;
 	align-items: center;
+  max-width: 900px;
+}
+
+main:has(.hero-container + .main-hero) .main-hero {
+	padding-inline: calc(5vw + 0.2vh);
+	padding-block: calc(2.5vw + 0.2vh);
 }
 
 .main-hero .title {
@@ -377,10 +383,13 @@ main.gefahren {
 .title-h {
 	color: var(--textGray2);
 	font-size: calc(2rem + 1vw + 7px);
-	font-weight: 600;
-	letter-spacing: 0.1vw;
+	font-weight: 700;
+	letter-spacing: -0.025em;
 	text-align: center;
-	margin: 0 0 0.4rem 0;
+	margin-bottom: 0.5em;
+  line-height: 1.1;
+  text-wrap: balance;
+  text-wrap: pretty;
 }
 
 .title-p {
