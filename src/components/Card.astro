@@ -1,0 +1,166 @@
+---
+interface Props {
+	as: string
+	highlightLocation: 'top' | 'left'
+	image?: {
+		src: string
+		alt: string
+	}
+	contentOrientation?: 'horizontal' | 'vertical'
+}
+
+const {
+	as: WrapperElement,
+	highlightLocation = 'top',
+	image,
+	contentOrientation = 'vertical',
+} = Astro.props
+---
+
+<WrapperElement
+	class={`card card-highlight-${highlightLocation} card-${contentOrientation}`}
+>
+	<slot name='card-text' />
+	{
+		!!image && (
+			<div class='card-pic-container'>
+				<img
+					class='card-pic'
+					src={image.src}
+					alt={image.alt}
+					title={image.alt}
+				/>
+			</div>
+		)
+	}
+</WrapperElement>
+
+<style>
+	.card {
+		align-content: space-between; /* Inhalt positionieren */
+		min-width: 100px; /* Mindestbreite */
+		display: grid; /* Grid festlegen */
+		grid-auto-rows: auto; /* Automatische Anzahl von Reihen */
+		grid-gap: 20px; /* Gap zwischen Inhalt */
+		position: relative;
+		z-index: 5;
+		background: var(--bgColour2);
+		box-shadow: 0 5px 10px -2px rgba(0, 0, 0, 0.05); /* Schatten */
+		padding: 2.5rem;
+		-webkit-transition: -webkit-transform 0.2s ease-in-out;
+		transition: -webkit-transform 0.2s ease-in-out;
+		transition: transform 0.2s ease-in-out;
+		transition:
+			transform 0.2s ease-in-out,
+			-webkit-transform 0.2s ease-in-out;
+	}
+
+	.card-horizontal {
+		padding: 0;
+		display: flex;
+	}
+
+	.card:hover,
+	.card:focus-within {
+		-webkit-transform: translateY(-1px);
+		transform: translateY(-1px);
+		box-shadow:
+			0 5px 10px -5px rgba(0, 0, 0, 0.15),
+			0 10px 25px -10px rgba(0, 0, 0, 0.1),
+			0 10px 30px -10px rgba(0, 0, 0, 0.1);
+	}
+
+	.card::before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 4px;
+		width: 100%;
+		background: var(--mainColour);
+		-webkit-transform-origin: right top;
+		transform-origin: right top;
+		-webkit-transform: scale(0, 1);
+		transform: scale(0, 1);
+		-webkit-transition: -webkit-transform 0.4s ease;
+		transition: -webkit-transform 0.4s ease;
+		transition: transform 0.4s ease;
+		transition:
+			transform 0.4s ease,
+			-webkit-transform 0.4s ease;
+	}
+
+	.card:hover::before,
+	.card:focus-within::before {
+		-webkit-transform: scale(1, 1);
+		transform: scale(1, 1);
+		-webkit-transform-origin: left top;
+		transform-origin: left top;
+	}
+
+	.card.card-highlight-left::before {
+		height: 100%;
+		width: 4px;
+		transform: scale(1, 1);
+	}
+
+	.card-pic-container {
+		z-index: 10;
+		display: grid;
+		max-height: 280px;
+		max-height: auto;
+		overflow: hidden;
+	}
+
+	.card-pic {
+		width: 100%;
+		cursor: pointer;
+		-webkit-transition: 0.2s -webkit-transform ease;
+		transition: 0.2s -webkit-transform ease;
+		transition: 0.2s transform ease;
+		transition:
+			0.2s transform ease,
+			0.2s -webkit-transform ease;
+		justify-self: end;
+	}
+	.card-pic:focus {
+		outline: none;
+	}
+	.card-pic:hover,
+	.card-pic:focus {
+		-webkit-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+
+	.card-horizontal .card-pic-container {
+		position: relative;
+		padding-bottom: 10%;
+		width: 100%;
+	}
+
+	.card-horizontal .card-pic {
+		object-fit: cover;
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		bottom: 0;
+		right: 0;
+		left: 0;
+	}
+
+	@media screen and (max-width: 768px) {
+		.card-horizontal .card {
+			flex-direction: column;
+		}
+
+		.card-horizontal .card-pic-container {
+			padding-bottom: 50%;
+		}
+
+		.card-horizontal .card::before {
+			height: 4px;
+			width: 100%;
+		}
+	}
+</style>

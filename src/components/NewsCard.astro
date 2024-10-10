@@ -1,20 +1,20 @@
 ---
+import type { Article } from '../articles'
+import Card from './Card.astro'
+
 interface Props {
-	article: {
-		title: string
-		description: string
-		source: string
-		date: string
-		author: string
-		image: string
-	}
+	article: Article
 }
 
 const { article } = Astro.props
 ---
 
-<article class='news-card'>
-	<div class='card-text'>
+<Card
+	as='article'
+	highlightLocation='top'
+	image={{ src: article.image, alt: article.imageAlt }}
+>
+	<div class='card-text' slot='card-text'>
 		<p class='card-author'>Artikel von {article.author} | {article.date}</p>
 		<h2 class='card-title'>
 			{article.title}
@@ -29,75 +29,8 @@ const { article } = Astro.props
 			rel='noreferrer'>Weiter Lesen</a
 		>
 	</div>
-	<div class='card-pic-container'>
-		<img
-			class='card-pic'
-			src={article.image}
-			alt={article.title}
-			title={article.title}
-		/>
-	</div>
-</article>
-
+</Card>
 <style>
-	.news-card {
-		align-content: space-between; /* Inhalt positionieren */
-		min-width: 100px; /* Mindestbreite */
-		display: grid; /* Grid festlegen */
-		grid-auto-rows: auto; /* Automatische Anzahl von Reihen */
-		grid-gap: 20px; /* Gap zwischen Inhalt */
-		position: relative;
-		z-index: 5;
-		background: var(--bgColour2);
-		box-shadow: 0 5px 10px -2px rgba(0, 0, 0, 0.05); /* Schatten */
-		padding: 2.5rem;
-		-webkit-transition: -webkit-transform 0.2s ease-in-out;
-		transition: -webkit-transform 0.2s ease-in-out;
-		transition: transform 0.2s ease-in-out;
-		transition:
-			transform 0.2s ease-in-out,
-			-webkit-transform 0.2s ease-in-out;
-	}
-
-	.news-card:hover,
-	.news-card:focus-within {
-		-webkit-transform: translateY(-1px);
-		transform: translateY(-1px);
-		box-shadow:
-			0 5px 10px -5px rgba(0, 0, 0, 0.15),
-			0 10px 25px -10px rgba(0, 0, 0, 0.1),
-			0 10px 30px -10px rgba(0, 0, 0, 0.1);
-	}
-
-	.news-card::before {
-		content: '';
-		display: block;
-		position: absolute;
-		top: 0;
-		left: 0;
-		height: 4px;
-		width: 100%;
-		background: var(--mainColour);
-		-webkit-transform-origin: right top;
-		transform-origin: right top;
-		-webkit-transform: scale(0, 1);
-		transform: scale(0, 1);
-		-webkit-transition: -webkit-transform 0.4s ease;
-		transition: -webkit-transform 0.4s ease;
-		transition: transform 0.4s ease;
-		transition:
-			transform 0.4s ease,
-			-webkit-transform 0.4s ease;
-	}
-
-	.news-card:hover::before,
-	.news-card:focus-within::before {
-		-webkit-transform: scale(1, 1);
-		transform: scale(1, 1);
-		-webkit-transform-origin: left top;
-		transform-origin: left top;
-	}
-
 	.card-text {
 		z-index: 10;
 		display: grid;
@@ -119,33 +52,6 @@ const { article } = Astro.props
 		margin-bottom: 5px;
 	}
 
-	.card-pic-container {
-		z-index: 10;
-		display: grid;
-		max-height: 280px;
-		max-height: auto;
-		overflow: hidden;
-	}
-
-	.card-pic {
-		width: 100%;
-		cursor: pointer;
-		-webkit-transition: 0.2s -webkit-transform ease;
-		transition: 0.2s -webkit-transform ease;
-		transition: 0.2s transform ease;
-		transition:
-			0.2s transform ease,
-			0.2s -webkit-transform ease;
-		justify-self: end;
-	}
-	.card-pic:focus {
-		outline: none;
-	}
-	.card-pic:hover,
-	.card-pic:focus {
-		-webkit-transform: scale(1.1);
-		transform: scale(1.1);
-	}
 	.card-source {
 		max-width: -webkit-max-content;
 		max-width: -moz-max-content;
